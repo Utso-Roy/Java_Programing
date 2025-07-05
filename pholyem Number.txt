@@ -4,32 +4,29 @@ public class PhloemNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // ইউজারের ইনপুট নেওয়া
         System.out.print("Enter a number: ");
         int number = scanner.nextInt();
         int originalNumber = number;
 
-        int firstDigit = number % 10;  // শেষের ডিজিট
-        int lastDigit = 0;             // প্রথম ডিজিট বের করার জন্য
-        int middleSum = 0;             // মধ্যবর্তী ডিজিটগুলোর যোগফল
+        int firstDigit = number % 10; 
+        int lastDigit = 0;             /
+        int middleSum = 0;          
 
-        number /= 10;  // শেষের ডিজিট বাদ দিয়ে শুরু করলাম
+        number /= 10; 
 
-        // লুপ দিয়ে প্রথম ডিজিট এবং মধ্যবর্তী যোগফল বের করা
         while (number > 9) {
-            middleSum += number % 10;  // মধ্যবর্তী ডিজিট যোগ করলাম
+            middleSum += number % 10;  
             number /= 10;
         }
 
-        lastDigit = number;  // প্রথম ডিজিট
+        lastDigit = number; 
 
-        int extremeSum = firstDigit + lastDigit;  // প্রান্তের ডিজিট যোগফল
+        int extremeSum = firstDigit + lastDigit; 
 
-        // শর্ত যাচাই
         if (middleSum != extremeSum) {
-            System.out.println(originalNumber + " is a Phloem Number ✅");
+            System.out.println(originalNumber + " is a Phloem Number ");
         } else {
-            System.out.println(originalNumber + " is not a Phloem Number ❌");
+            System.out.println(originalNumber + " is not a Phloem Number ");
         }
 
         scanner.close();
