@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class ATMTransaction {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double balance = 1000.00;  // প্রাথমিক ব্যালেন্স
+
+        while (true) {
+            System.out.println("\n===== Welcome to Simple ATM =====");
+            System.out.println("1. Check Balance");
+            System.out.println("2. Deposit Money");
+            System.out.println("3. Withdraw Money");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+            
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:  // ব্যালেন্স চেক
+                    System.out.println("Your current balance is: $" + balance);
+                    break;
+
+                case 2:  // টাকা জমা
+                    System.out.print("Enter amount to deposit: $");
+                    double depositAmount = scanner.nextDouble();
+                    if (depositAmount > 0) {
+                        balance += depositAmount;
+                        System.out.println("Successfully deposited! New balance: $" + balance);
+                    } else {
+                        System.out.println("Invalid amount. Please enter a positive number.");
+                    }
+                    break;
+
+                case 3:  // টাকা তুলা
+                    System.out.print("Enter amount to withdraw: $");
+                    double withdrawAmount = scanner.nextDouble();
+                    if (withdrawAmount > 0 && withdrawAmount <= balance) {
+                        balance -= withdrawAmount;
+                        System.out.println("Withdrawal successful! New balance: $" + balance);
+                    } else if (withdrawAmount > balance) {
+                        System.out.println("Insufficient balance!");
+                    } else {
+                        System.out.println("Invalid amount. Please enter a positive number.");
+                    }
+                    break;
+
+                case 4:  // প্রোগ্রাম বন্ধ
+                    System.out.println("Thank you for using the ATM. Goodbye!");
+                    scanner.close();
+                    return;
+
+                default:  // ভুল অপশন
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        }
+    }
+}

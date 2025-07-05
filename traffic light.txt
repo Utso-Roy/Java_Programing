@@ -1,0 +1,39 @@
+                                  Problem -4
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter traffic light color (Green, Yellow, Red): ");
+        String light = scanner.next().toLowerCase();
+        
+        boolean pedestrianWaiting = false;
+         if (light.equals("green")) {
+            System.out.print("Pedestrian waiting - (true/false): ");
+       
+            pedestrianWaiting = scanner.nextBoolean();
+        }
+        
+        switch (light) {
+            case "green":
+                if (pedestrianWaiting) {
+                    System.out.println("Slow down");
+                } else {
+                    System.out.println("Drive");
+                }
+                break;
+            case "yellow":
+                System.out.println("Prepare to stop");
+                break;
+            case "red":
+                System.out.println("Stop");
+                break;
+            default:
+                System.out.println("Invalid input");
+        }
+        
+        scanner.close();
+    }
+}
+

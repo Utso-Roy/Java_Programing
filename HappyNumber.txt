@@ -1,0 +1,36 @@
+public class HappyNumbers {
+
+
+    public static boolean isHappy(int num) {
+        while (num != 1 && num != 4) {
+            num = sumOfSquares(num);
+        }
+        return num == 1;
+    }
+
+    // Method to calculate sum of squares of digits
+    public static int sumOfSquares(int num) {
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;  // শেষ সংখ্যা বের করি
+            sum += digit * digit;  // বর্গফল যোগ করি
+            num /= 10;             // সংখ্যাটি ছোট করি
+        }
+        return sum;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        System.out.println(" Happy Number:");
+
+        int count = 0, number = 1;
+
+        while (count < 10) {
+            if (isHappy(number)) {
+                System.out.println(number);
+                count++;
+            }
+            number++;
+        }
+    }
+}

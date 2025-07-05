@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class OccurrenceExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("একটি স্ট্রিং লিখুন: ");
+        String text = sc.nextLine();
+
+        System.out.print("যে বর্ণটি খুঁজতে চান তা লিখুন: ");
+        char ch = sc.next().charAt(0);
+
+        int count = 0;
+
+        // লুপ চালিয়ে বর্ণ গুলো চেক করি
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ch) {
+                count++;
+            }
+        }
+
+        System.out.println("'" + ch + "' বর্ণটি " + count + " বার পাওয়া গেছে।");
+    }
+}
