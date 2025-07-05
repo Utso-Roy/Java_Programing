@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ATMTransaction {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double balance = 1000.00;  // প্রাথমিক ব্যালেন্স
+        double balance = 1000.00;  
 
         while (true) {
             System.out.println("\n===== Welcome to Simple ATM =====");
@@ -16,11 +16,11 @@ public class ATMTransaction {
             int choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:  // ব্যালেন্স চেক
+                case 1: 
                     System.out.println("Your current balance is: $" + balance);
                     break;
 
-                case 2:  // টাকা জমা
+                case 2: 
                     System.out.print("Enter amount to deposit: $");
                     double depositAmount = scanner.nextDouble();
                     if (depositAmount > 0) {
@@ -31,7 +31,7 @@ public class ATMTransaction {
                     }
                     break;
 
-                case 3:  // টাকা তুলা
+                case 3:  
                     System.out.print("Enter amount to withdraw: $");
                     double withdrawAmount = scanner.nextDouble();
                     if (withdrawAmount > 0 && withdrawAmount <= balance) {
@@ -44,12 +44,12 @@ public class ATMTransaction {
                     }
                     break;
 
-                case 4:  // প্রোগ্রাম বন্ধ
+                case 4:  
                     System.out.println("Thank you for using the ATM. Goodbye!");
                     scanner.close();
                     return;
 
-                default:  // ভুল অপশন
+                default:  
                     System.out.println("Invalid choice! Please try again.");
             }
         }
