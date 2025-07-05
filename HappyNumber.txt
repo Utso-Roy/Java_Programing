@@ -8,13 +8,12 @@ public class HappyNumbers {
         return num == 1;
     }
 
-    // Method to calculate sum of squares of digits
     public static int sumOfSquares(int num) {
         int sum = 0;
         while (num > 0) {
-            int digit = num % 10;  // শেষ সংখ্যা বের করি
-            sum += digit * digit;  // বর্গফল যোগ করি
-            num /= 10;             // সংখ্যাটি ছোট করি
+            int digit = num % 10; 
+            sum += digit * digit; 
+            num /= 10;             
         }
         return sum;
     }
