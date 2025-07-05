@@ -3,22 +3,27 @@ import java.util.Scanner;
 public class PalindromeNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("একটি সংখ্যা লিখুন: ");
+
+        System.out.print("Enter a number: ");
         int number = sc.nextInt();
 
         int original = number;
         int reverse = 0;
 
+        // Reverse the number
         while (number != 0) {
-            int digit = number % 10;                     reverse = reverse * 10 + digit;  // উল্টো করে যোগ করা
-            number /= 10;                    // সংখ্যা ছোট করা
+            int digit = number % 10;               
+            reverse = reverse * 10 + digit;          // Append digit to reversed number
+            number /= 10;                            // Remove last digit from number
         }
 
-        // চেক করা উল্টো করলে একই থাকে কিনা
+        // Check if the original number is equal to the reversed number
         if (original == reverse) {
-            System.out.println(original + " একটি Palindrome সংখ্যা!");
+            System.out.println(original + " is a Palindrome number!");
         } else {
-            System.out.println(original + " একটি Palindrome সংখ্যা নয়!");
+            System.out.println(original + " is not a Palindrome number!");
         }
+
+        sc.close(); 
     }
 }
